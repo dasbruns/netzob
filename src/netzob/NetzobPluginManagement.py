@@ -52,6 +52,7 @@ class NetzobPluginManagement(object):
             self.listAvailablePlugins()
 
     def listAvailablePlugins(self):
+        print '================================'
         print "Available plugins:"
         for entrypoint in pkg_resources.iter_entry_points('netzob.plugins'):
             # load the plugin in memory

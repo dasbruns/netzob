@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 
 #+---------------------------------------------------------------------------+
@@ -44,6 +44,8 @@ from netzob.Common.CommandLine import CommandLine
 
 if __name__ == "__main__":
 
+    print '=============================='
+    print 'hello NETZOB'
     # Parsing Command Line arguments
     commandLineParser = CommandLine()
 
@@ -63,11 +65,15 @@ if __name__ == "__main__":
 
     # Launch the GUI or the plugin manager
     if commandLineParser.isStartGUIRequested():
+        print '=============================='
+        print 'hello GUI'
         GObject.threads_init()  # for handling concurrent GUI access from threads
         from netzob.NetzobMainController import NetzobMainController
         netzobController = NetzobMainController()
         netzobController.run()
     elif commandLineParser.isManagePluginsRequested():
+        print '=============================='
+        print 'hello PLUGIN'
         from netzob.NetzobPluginManagement import NetzobPluginManagement
         netzobPluginManagement = NetzobPluginManagement(commandLineParser)
         netzobPluginManagement.start()

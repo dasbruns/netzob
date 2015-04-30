@@ -71,6 +71,8 @@ class NetzobMainController(object):
     """Netzob main window controller"""
 
     def __init__(self):
+        print '=============================='
+        print 'hello MAINFRAME'
         # Parse command line arguments
         cmdLine = CommandLine()
         cmdLine.parse()
@@ -124,6 +126,8 @@ class NetzobMainController(object):
         self.view = NetzobMainView(self)
 
         # Load all available plugins
+        print '=============================='
+        print 'hello PLUGINS'
         NetzobPlugin.loadPlugins(self)
 
         self.view.registerPerspectives()

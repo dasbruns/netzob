@@ -171,11 +171,15 @@ class NetzobPlugin(object):
 
     @staticmethod
     def loadPlugins(netzob):
+        print '=============================='
+        print 'hello PLUGIN CHECKER'
         from netzob.Common.Plugins.PluginChecker import PluginChecker
         logging.debug("+ Loading plugins:")
         for entrypoint in pkg_resources.iter_entry_points('netzob.plugins'):
             try:
                 plugin_class = entrypoint.load()
+                print '=============================='
+                print 'hello LOADED', entrypoint
                 if not PluginChecker.isValidPlugin(plugin_class):
                     logging.warning("Plugin implemented in class {0} has been rejected by the plugin checker (invalid).".format(plugin_class))
                     NetzobPlugin.unloadPlugin(plugin_class)

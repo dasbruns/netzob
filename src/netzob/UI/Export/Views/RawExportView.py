@@ -47,7 +47,7 @@ class RawExportView(object):
     def __init__(self):
         self.buildPanel()
 
-        self.dialog = Gtk.Dialog(title=_("Export project as raw XML"), flags=0, buttons=None)
+        self.dialog = Gtk.Dialog(title=_("Export project as raw XML"), flags=0)#, buttons=None)
         self.dialog.show()
         self.dialog.vbox.pack_start(self.panel, True, True, 0)
         self.dialog.set_size_request(600, 400)

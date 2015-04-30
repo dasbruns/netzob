@@ -53,7 +53,7 @@ class PeachExportView(AbstractExporterView):
         super(PeachExportView, self).__init__(plugin, controller)
         self.buildPanel()
 
-        self.dialog = Gtk.Dialog(title=_("Export project as Peach pit XML"), flags=0, buttons=None)
+        self.dialog = Gtk.Dialog(title=_("Export project as Peach pit XML"), flags=0)#, buttons=None)
         self.dialog.vbox.pack_start(self.panel, True, True, 0)
         self.dialog.set_size_request(800, 600)
 

@@ -485,15 +485,20 @@ class XDotAttrParser:
         return self.pos < len(self.buf)
 
     def read_code(self):
+        print '========================'
+        print 'read code'
         pos = self.buf.find(" ", self.pos)
         res = self.buf[self.pos:pos]
         self.pos = pos + 1
         while self.pos < len(self.buf) and self.buf[self.pos].isspace():
             self.pos += 1
+        print 'value res:',res
         return res
 
     def read_number(self):
-        return int(self.read_code())
+        print '========================'
+        print 'read number'
+        return int(float(self.read_code()))
 
     def read_float(self):
         return float(self.read_code())

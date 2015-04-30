@@ -78,6 +78,8 @@ class PeachExporterPlugin(ExporterPlugin):
                 @rtype: string
                 @return: the plugin version.
         """
+        print '=============================='
+        print 'hello VERSION'
         return self.__plugin_version__
 
     def getDescription(self):
